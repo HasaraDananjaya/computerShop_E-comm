@@ -1,6 +1,6 @@
-import { Mongoose } from "mongoose";
+import mongoose from "mongoose";
 
-const userSchema = new Mongoose.Schema({
+const userSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -24,11 +24,11 @@ const userSchema = new Mongoose.Schema({
     },
     avatar: {
         type: String,
-        default: 'D:\Academic(UOR)-Semester 05\Elective Modules\`EE5209 Web Application Development\Project - Computer shop Ecommerce\ComputerShop_Ecommerce\nextjs_ecommerce\avatarlogo\icon-5359553_1280.png'
+        default: 'https://res.cloudinary.com/dy1x82jm4/image/upload/v1633077067/icon-5359553_1280_uca6dq.png'
     }
 },{
     timestamps: true
 })
 
-let Dataset = Mongoose.models.user || Mongoose.model('user', userSchema)
+let Dataset = mongoose.models.user || mongoose.model('user', userSchema)
 export default Dataset

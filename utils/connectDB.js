@@ -1,11 +1,11 @@
-import Mongoose from "mongoose";
+import mongoose from "mongoose";
 
 const connectDB = () => {
-    if(Mongoose.connections[0].readyState){
+    if(mongoose.connections[0].readyState){
         console.log('Already Connected...')
         return;
     }
-    Mongoose.connect(process.env.MONGODB_URL, {
+    mongoose.connect(process.env.MONGODB_URL, {
         useCreateIndex: true,
         useFindAndModify: false,
         useNewUrlParser: true,
@@ -14,7 +14,6 @@ const connectDB = () => {
         if(err) throw err;
         console.log('Connected to MongoDB...')
     })
-
 }
 
 export default connectDB
